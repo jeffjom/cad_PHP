@@ -1,0 +1,16 @@
+CREATE TABLE users (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name varchar(255),
+  email varchar(150)
+);
+
+CREATE TABLE sectors (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name varchar(255)
+);
+
+CREATE TABLE user_sectors(
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id int,
+  sector_id int
+);
