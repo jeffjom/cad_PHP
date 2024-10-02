@@ -18,8 +18,8 @@
     <!-- <input type="text" id="sector_name" name="sector_name"><br><br> -->
 
     <label for="sector_cad">Novo setor:</label>
-    <input type="text" id="sector_name" name="sector_name"><br><br>
-    <input type="submit" name="cad" value="Cadastrar Setor">
+    <input type="text" id="sector_name" name="sector_name">
+    <input type="submit" name="cad" value="Cadastrar Setor"><br><br>
 
     <input type="submit" name="reg" value="Registrar">
 </form>
