@@ -1,5 +1,3 @@
-<?php require_once 'register.php' ?>
-
 <form action="register.php" method="post">
     <label for="name">Nome:</label>
     <input type="text" id="name" name="name"><br><br>
@@ -9,6 +7,7 @@
     <select id="sector" name="sector_id"> <!-- required> -->
         <option value="">Selecione um setor</option>
         <?php
+        require_once 'register.php';
         // Populate the combobox with the sectors from the database
         foreach ($sectors as $sector) {
             echo "<option value='" . $sector['id'] . "'>" . $sector['name'] . "</option>";
