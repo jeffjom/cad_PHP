@@ -3,76 +3,7 @@
 
 // Include the database connection script
 require_once 'config.php';
-/*
-// Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get the user and sector data from the form
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $sector_name = $_POST['sector_name'];
 
-    // Insert the user data into the users table
-    $user_query = "INSERT INTO users (name, email) VALUES (:name, :email)";
-    $stmt = $conn->prepare($user_query);
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    // Get the last inserted user ID
-    $user_id = $conn->lastInsertId();
-
-    // Insert the sector data into the sectors table
-    $sector_query = "INSERT INTO sectors (name) VALUES (:sector_name)";
-    $stmt = $conn->prepare($sector_query);
-    $stmt->bindParam(':sector_name', $sector_name);
-    $stmt->execute();
-
-    // Get the last inserted sector ID
-    $sector_id = $conn->lastInsertId();
-
-    // Associate the user and sector by inserting into a pivot table
-    $pivot_query = "INSERT INTO user_sectors (user_id, sector_id) VALUES (:user_id, :sector_id)";
-    $stmt = $conn->prepare($pivot_query);
-    $stmt->bindParam(':user_id', $user_id);
-    $stmt->bindParam(':sector_id', $sector_id);
-    $stmt->execute();
-
-    // Display a success message
-    echo "Usuário e setor cadastrado com sucesso!";
-}
-
-// Retrieve and display the registered users and their associated sectors
-$query = "SELECT u.name, u.email, s.name as sector_name 
-           FROM users u 
-           INNER JOIN user_sectors us ON u.id = us.user_id 
-           INNER JOIN sectors s ON us.sector_id = s.id";
-$stmt = $conn->prepare($query);
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-if (count($result) > 0) {
-    echo "<h2>Usuários e setores registrados:</h2>";
-    echo "<table border='1'>";
-    echo "<tr><th>Name</th><th>Email</th><th>Sector</th></tr>";
-    foreach ($result as $row) {
-        echo "<tr>";
-        echo "<td>" . $row['name'] . "</td>";
-        echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['sector_name'] . "</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-    echo "<br>";
-    echo "<hr>";
-    echo "<br>";
-    echo "<a href='index.php'> Voltar </a>";
-} else {
-    echo "Não há registros de usuários de setores ainda.";
-}
-
-// Display the registration form
-?>
-*/
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['cad'])){
         $sector_name = $_POST['sector_name'];
